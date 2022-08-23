@@ -1,8 +1,18 @@
 
-void setup(){
-  //some of your code here
-}
-void draw(){
-  //more of your code here
-}
-
+background(175,225,255);
+size(400,400);
+noStroke();
+ellipse(200,225,200,250);
+ellipse(200,125,200,175);
+ellipse(200,125,200,175);
+triangle(125,40,110,60,140,60);
+fill(0,0,0);
+ellipse(150,100,20,20);
+ellipse(250,100,20,20);
+rect(75,125,50,5);
+rect(75,140,50,5);
+rect(275,125,50,5);
+rect(275,140,50,5);
+fill(255,255,255);
+rect(125,275,50,100);
+rect(225,275,50,100);
