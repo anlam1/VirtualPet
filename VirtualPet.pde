@@ -8,7 +8,7 @@ public void setup() {
 }
 
 public void draw() {
-  background(192);
+  background(190,205,255);
   int y = arduino.analogRead(5);
   if (y > 90)
 y = 90;
@@ -56,4 +56,6 @@ rect(327,85+y,5,10);
 fill(216,206,111); // gold
 ellipse(200,185,40,40); // necklace coin
 ellipse(130,285,60,80);  // held coin
+fill(170,145,110); // brown
+rect(0,360,400,40); // background table
 }
