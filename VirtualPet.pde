@@ -1,5 +1,23 @@
+import processing.serial.*;
+import cc.arduino.*;
+Arduino arduino;
+
+public void setup() {
+  size(400, 400);
+  arduino = new Arduino(this, Arduino.list()[0], 57600); //change the [0] to a [1] or [2] etc. if your program doesn't work
+}
+
+public void draw() {
+  background(192);
+  int y = arduino.analogRead(5);
+  if (y > 90)
+y = 90;
+if (y < 0)
+y = 0;
+  System.out.println(y);
+
 noStroke();
-size(400,400);
+fill(255,255,255); // white
 ellipse(200,225,200,250); // body
 ellipse(200,125,190,165); // head
 triangle(115,30,115,90,150,60); // left ear (white)
@@ -7,8 +25,8 @@ triangle(285,30,285,90,250,60); // right ear (white)
 ellipse(125,310,60,100); // left leg
 ellipse(275,310,60,100); // right leg
 ellipse(300,200,75,30); // right arm
-rect(308,98,30,100); // right arm
-ellipse(323,100,40,40); // right paw
+rect(308,98+y,30,100-y); // right arm
+ellipse(323,100+y,40,40); // right paw
 fill(0,0,0); // black
 ellipse(150,100,20,20); // left eye
 ellipse(250,100,20,20); // right eye
@@ -33,8 +51,9 @@ rect(265,350,5,10);
 rect(280,350,5,10);
 rect(115,240,5,10);
 rect(130,240,5,10);
-rect(313,85,5,10);
-rect(327,85,5,10);
+rect(313,85+y,5,10);
+rect(327,85+y,5,10);
 fill(216,206,111); // gold
 ellipse(200,185,40,40); // necklace coin
 ellipse(130,285,60,80);  // held coin
+}
