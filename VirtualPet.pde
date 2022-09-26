@@ -1,4 +1,8 @@
-noStroke();
+
+void setup(){
+  noStroke();
+}
+void draw(){
 fill(255,255,255); // white
 ellipse(200,225,200,250); // body
 ellipse(200,125,190,165); // head
